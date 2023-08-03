@@ -12,7 +12,7 @@ function calculateTimeRemaining(targetTime) {
     const currentTime = new Date().getTime();
     const timeRemaining = targetTime - currentTime;
 
-    const minutes = Math.round(timeRemaining / 60000);
+    const minutes = Math.floor(timeRemaining / 60000);
     const seconds = Math.ceil((timeRemaining % 60000) / 1000);
 
     return { minutes, seconds };
