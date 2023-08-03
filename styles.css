@@ -17,3 +17,7 @@ body {
 h1 {
     margin-bottom: 20px;
 }
+
+#nextWaveCountdown {
+    font-size: 1.5rem;
+}

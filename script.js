@@ -1,12 +1,17 @@
 const waves = [
-    { text: "Summoner right side spawning in:", time: 50000 },
-    { text: "Summoner left side spawning in:", time: 240000 },
-    { text: "Summoner both sides spawning in:", time: 380000 }
+    { text: "Summoner wave 1, spawning on right side:", time: 5000 },
+    { text: "Summoner wave 2, spawning on left side:", time: 24000 },
+    { text: "Summoner wave 3, spawning on both sides:", time: 38000 },
+    { text: "Summoner wave 4, spawning on both sides:", time: 47500 }
 ];
 
 
 let currentWaveIndex = 0; // Initialize the current wave index
 let startTime = new Date().getTime(); // Save the reference to the start time
+let countdownInterval;
+
+const waveInfoTextElement = document.getElementById('waveInfoText');
+const nextWaveCountdownElement = document.getElementById('nextWaveCountdown');
 
 function calculateTimeRemaining(targetTime) {
     const currentTime = new Date().getTime();
@@ -22,9 +27,6 @@ function calculateTimeRemaining(targetTime) {
 }
 
 function updateCountdown() {
-    const waveInfoTextElement = document.getElementById('waveInfoText');
-    const nextWaveCountdownElement = document.getElementById('nextWaveCountdown');
-
     const currentWaveTime = startTime + waves[currentWaveIndex].time;
     const { minutes, seconds } = calculateTimeRemaining(currentWaveTime);
     nextWaveCountdownElement.textContent = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
@@ -41,12 +43,10 @@ function updateCountdown() {
     }
 }
 
-
-let countdownInterval;
-
 function startCountdown() {
     clearInterval(countdownInterval); // Clear the previous interval, if any
     currentWaveIndex = 0; // Reset to the first wave
+    waveInfoTextElement.textContent = waves[currentWaveIndex].text;
     startTime = new Date().getTime(); // Update the start time only once
     updateCountdown();
     countdownInterval = setInterval(updateCountdown, 100);
