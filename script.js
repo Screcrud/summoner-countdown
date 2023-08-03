@@ -12,8 +12,11 @@ function calculateTimeRemaining(targetTime) {
     const currentTime = new Date().getTime();
     const timeRemaining = targetTime - currentTime;
 
-    const minutes = Math.floor(timeRemaining / 60000);
-    const seconds = Math.ceil((timeRemaining % 60000) / 1000);
+    let minutes = Math.floor(timeRemaining / 60000);
+    let seconds = Math.round((timeRemaining % 60000) / 1000);
+
+    minutes = Math.max(minutes, 0);
+    seconds = Math.max(seconds, 0);
 
     return { minutes, seconds };
 }
@@ -46,7 +49,7 @@ function startCountdown() {
     currentWaveIndex = 0; // Reset to the first wave
     startTime = new Date().getTime(); // Update the start time only once
     updateCountdown();
-    countdownInterval = setInterval(updateCountdown, 1000);
+    countdownInterval = setInterval(updateCountdown, 100);
 }
 
 document.getElementById('startCountdownButton').addEventListener('click', startCountdown);
