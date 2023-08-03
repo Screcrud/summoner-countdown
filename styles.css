@@ -1,7 +1,7 @@
 body {
     font-family: Arial, sans-serif;
     text-align: center;
-    margin: 40px;
+    margin: 10px;
 }
 
 .countdown-container {
@@ -11,11 +11,11 @@ body {
 }
 
 .countdown-item {
-    margin: 10px;
+    margin: 5px;
 }
 
 h1 {
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
 #nextWaveCountdown {
