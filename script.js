@@ -1,8 +1,8 @@
 const waves = [
-    { text: "Summoner wave 1, spawning on right side:", time: 5000 },
-    { text: "Summoner wave 2, spawning on left side:", time: 24000 },
-    { text: "Summoner wave 3, spawning on both sides:", time: 38000 },
-    { text: "Summoner wave 4, spawning on both sides:", time: 47500 }
+    { text: "Summoner wave 1, spawning on right side:", time: 50000 },
+    { text: "Summoner wave 2, spawning on left side:", time: 240000 },
+    { text: "Summoner wave 3, spawning on both sides:", time: 380000 },
+    { text: "Summoner wave 4, spawning on both sides:", time: 475000 }
 ];
 
 
